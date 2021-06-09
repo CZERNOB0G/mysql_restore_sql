@@ -49,7 +49,7 @@ if [ -z ${data_find[$id_data_solicitada]} ];
 fi
 data_solicitada="${data_find[$id_data_solicitada]}"
 echo "------------->Descompactando o backup: $data_solicitada..."
-zcat $backup/mysqldump/$data_solicitada/$banco.sql.gz > /var/backup/$banco.sql;
+zcat $backup/mysqldump/$data_solicitada/$banco.sql.gz > $backup/$banco.sql;
 echo "------------->Restaurando..."
 mysql -p$pass $banco < $backup/$banco.sql;
 echo "------------->Desmontando partição de backup..."
