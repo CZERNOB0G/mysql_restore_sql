@@ -2,7 +2,7 @@
 backup="/var/backup"
 pass=`grep PASS /usr/local/sbin/mysqldump_backup.rb | head -1 | cut -d\' -f2`;
 mount $backup
-banco = "$1";
+banco="$1";
 if [ -z "$banco" ];
     then
         echo "============================================"
